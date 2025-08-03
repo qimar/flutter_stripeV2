@@ -19,16 +19,12 @@ class ColorKey {
 }
 
 extension ColorX on Color {
-  String get colorHexString {
-    // ignore: deprecated_member_use
-    final red = (this.red * 255).toInt().toRadixString(16).padLeft(2, '0');
-    // ignore: deprecated_member_use
-    final green = (this.green * 255).toInt().toRadixString(16).padLeft(2, '0');
-    // ignore: deprecated_member_use
-    final blue = (this.blue * 255).toInt().toRadixString(16).padLeft(2, '0');
-    // ignore: deprecated_member_use
-    final alpha = (this.alpha * 255).toInt().toRadixString(16).padLeft(2, '0');
-
-    return '$alpha$red$green$blue';
-  }
+String toHexString(Color color) {
+  final red = color.red.toRadixString(16).padLeft(2, '0');
+  final green = color.green.toRadixString(16).padLeft(2, '0');
+  final blue = color.blue.toRadixString(16).padLeft(2, '0');
+  final alpha = color.alpha.toRadixString(16).padLeft(2, '0');
+  return '#$red$green$blue$alpha';
+}
+  String get colorHexString => toHexString(this);
 }
