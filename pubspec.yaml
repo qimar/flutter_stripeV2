@@ -1,8 +1,19 @@
-name: flutter_stripe
+# name: flutter_stripe
 
+# environment:
+#   sdk: '>=3.0.0 <4.0.0'
+  
+# dev_dependencies:
+#   melos: ^3.1.0
+#   flutter_lints: ^5.0.0
+name: stripe_workspace
 environment:
   sdk: '>=3.0.0 <4.0.0'
-  
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_stripe:
+    path: ./packages/stripe  # Reference the subpackage
 dev_dependencies:
   melos: ^3.1.0
   flutter_lints: ^5.0.0
